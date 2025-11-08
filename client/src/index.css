@@ -1,0 +1,14 @@
+/* src/index.css */
+
+/* Default app styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* Smooth animations */
+* {
+  transition: all 0.2s ease-in-out;
+}

@@ -1,0 +1,485 @@
+.compare-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.compare-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  overflow-y: auto;
+  max-height: 90vh;
+  position: relative;
+}
+
+.compare-modal h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #7c3aed;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.compare-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.compare-card {
+  background: #f8f7fa;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.compare-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.compare-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.compare-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.compare-card li {
+  margin-bottom: 0.3rem;
+}
+
+
+
+
+
+
+
+
+.compare-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.compare-modal-container {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.compare-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.compare-modal-header h2 {
+  color: #7c3aed;
+}
+
+.close-btn {
+  background: #ff5e5e;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.compare-modal-body {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.compare-card {
+  background: #f8f7fa;
+  border-radius: 10px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.compare-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.compare-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.compare-card h3 {
+  font-size: 1.1rem;
+  color: #4b0082;
+  margin-bottom: 0.3rem;
+}
+
+.compare-card p {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.compare-details div {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0.3rem 0;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.badge.popular {
+  background-color: #f59e0b;
+}
+
+.badge.best {
+  background-color: #10b981;
+}
+
+
+
+
+
+
+.compare-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.compare-modal {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.compare-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.compare-header h2 { color: #4b0082; }
+.compare-close-btn {
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.compare-close-btn:hover { opacity: 0.9; }
+
+.compare-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.compare-card {
+  background: #f4f4f9;
+  border-radius: 10px;
+  width: 280px;
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.compare-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.compare-card h3 { color: #4b0082; font-size: 1.1rem; }
+.compare-card p { font-size: 0.85rem; color: #555; }
+
+.compare-life.best, .compare-price.best, .compare-claim.best {
+  color: green;
+  font-weight: bold;
+}
+.compare-life.worst, .compare-price.worst, .compare-claim.worst {
+  color: red;
+  font-weight: bold;
+}
+
+.compare-apply-btn {
+  margin-top: auto;
+  padding: 0.5rem;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.compare-apply-btn:hover { opacity: 0.9; }
+
+
+
+
+
+
+
+
+/* Modal Overlay */
+.compare-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Modal Container */
+.compare-modal {
+  background: linear-gradient(135deg, #ffedd5, #dbeafe, #fef3c7, #c7d2fe);
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.compare-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.compare-header h2 {
+  color: #7c3aed;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.compare-close-btn {
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.compare-close-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+/* Compare Table/Grid */
+.compare-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Individual Compare Card */
+.compare-card {
+  background: linear-gradient(135deg, #fde68a, #a5f3fc, #fbcfe8);
+  border-radius: 12px;
+  width: 280px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.compare-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Image */
+.compare-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Card Title & Text */
+.compare-card h3 {
+  color: #4b0082;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.compare-card p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Policy Details (Life Cover, Price, Claim) */
+.compare-details div {
+  font-size: 0.9rem;
+  color: #111;
+  margin: 0.3rem 0;
+}
+.compare-life.best, .compare-price.best, .compare-claim.best {
+  color: green;
+  font-weight: bold;
+  background: #d1fae5;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.compare-life.worst, .compare-price.worst, .compare-claim.worst {
+  color: red;
+  font-weight: bold;
+  background: #fee2e2;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* Badges */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+}
+.badge.popular {
+  background-color: #f59e0b;
+}
+.badge.best {
+  background-color: #10b981;
+}
+
+/* Apply Button */
+.compare-apply-btn {
+  margin-top: auto;
+  padding: 0.5rem;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.compare-apply-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .compare-card { width: 45%; }
+}
+@media (max-width: 768px) {
+  .compare-card { width: 100%; }
+  .compare-header h2 { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .compare-modal {
+    padding: 1rem;
+  }
+  .compare-header h2 { font-size: 1.3rem; }
+  .compare-close-btn { width: 30px; height: 30px; font-size: 1.2rem; }
+}

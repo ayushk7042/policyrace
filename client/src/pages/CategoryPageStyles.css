@@ -1,0 +1,1038 @@
+
+
+/* Container */
+.cpage-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
+}
+
+/* Breadcrumb */
+.cpage-breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.cpage-breadcrumb a {
+  text-decoration: none;
+  color: #8b5cf6;
+}
+
+/* Header */
+.cpage-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #7c3aed;
+}
+.cpage-header p {
+  font-size: 1rem;
+  color: #555;
+}
+.cpage-header img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Controls */
+.cpage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.cpage-controls input,
+.cpage-controls select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Policy Grid */
+.cpage-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Policy Card */
+.cpage-policy-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.cpage-policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+.cpage-policy-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.cpage-policy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.cpage-policy-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+.cpage-policy-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Actions */
+.cpage-policy-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cpage-details-btn,
+.cpage-apply-btn,
+.cpage-compare-btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+.cpage-details-btn {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  text-decoration: none;
+  display: inline-block;
+}
+.cpage-details-btn:hover {
+  background-color: #c7d2fe;
+}
+.cpage-apply-btn {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+}
+.cpage-apply-btn:hover {
+  opacity: 0.9;
+}
+.cpage-compare-btn {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+.cpage-compare-btn:hover {
+  background-color: #e5e7eb;
+}
+.cpage-compare-btn.active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* Badges */
+.cpage-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+.cpage-badge.popular {
+  background-color: #f59e0b;
+}
+.cpage-badge.best {
+  background-color: #10b981;
+}
+
+/* Load More */
+.cpage-load-more {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cpage-load-more button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  cursor: pointer;
+}
+.cpage-load-more button:hover {
+  opacity: 0.9;
+}
+
+/* Compare Fixed Button */
+.cpage-compare-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Loading / No Policy */
+.cpage-loading-text,
+.cpage-no-policy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+
+
+
+
+
+/* Container */
+.cpage-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #f8f7fa 0%, #e0e7ff 100%);
+  color: #333;
+}
+
+/* Breadcrumb */
+.cpage-breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.cpage-breadcrumb a {
+  text-decoration: none;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+.cpage-breadcrumb span {
+  color: #4b0082;
+  font-weight: 500;
+}
+
+/* Header */
+.cpage-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #7c3aed;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+.cpage-header p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.cpage-header img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Controls */
+.cpage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.cpage-controls input,
+.cpage-controls select {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+  transition: 0.3s;
+}
+.cpage-controls input:focus,
+.cpage-controls select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 5px rgba(124, 60, 237, 0.4);
+  outline: none;
+}
+
+/* Policy Grid */
+.cpage-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Policy Card */
+.cpage-policy-card {
+  background: linear-gradient(135deg, #fff, #f3f0ff);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+}
+.cpage-policy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #f0f5ff, #e0d7ff);
+}
+
+.cpage-policy-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 2px solid #7c3aed20;
+}
+
+/* Policy Info */
+.cpage-policy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #4b0082;
+}
+.cpage-policy-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+.cpage-policy-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+.cpage-policy-meta span {
+  font-weight: 600;
+}
+
+/* Actions */
+.cpage-policy-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cpage-details-btn,
+.cpage-apply-btn,
+.cpage-compare-btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cpage-details-btn {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-weight: 600;
+}
+.cpage-details-btn:hover {
+  background: #d8b4fe;
+  color: #fff;
+}
+.cpage-apply-btn {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  font-weight: 600;
+}
+.cpage-apply-btn:hover {
+  opacity: 0.9;
+}
+.cpage-compare-btn {
+  background: #f0f0f0;
+  color: #1f2937;
+}
+.cpage-compare-btn:hover {
+  background: #e0e0e0;
+}
+.cpage-compare-btn.active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* Badges */
+.cpage-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cpage-badge.popular {
+  background: #f59e0b;
+}
+.cpage-badge.best {
+  background: #10b981;
+}
+
+/* Load More */
+.cpage-load-more {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cpage-load-more button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cpage-load-more button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Compare Fixed Button */
+.cpage-compare-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cpage-compare-fixed-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Loading / No Policy */
+.cpage-loading-text,
+.cpage-no-policy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+
+
+
+
+
+
+/* Container */
+.cpage-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
+}
+
+/* Breadcrumb */
+.cpage-breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.cpage-breadcrumb a {
+  text-decoration: none;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* Header */
+.cpage-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #7c3aed;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.cpage-header p {
+  font-size: 1rem;
+  color: #555;
+}
+.cpage-header img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Controls */
+.cpage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.cpage-controls input,
+.cpage-controls select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Policy Grid */
+.cpage-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Policy Card */
+.cpage-policy-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.cpage-policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* Policy Image */
+.cpage-policy-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e7ff;
+}
+
+/* Policy Info */
+.cpage-policy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a; /* Dark Blue for title */
+}
+.cpage-policy-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #374151; /* Greyish text */
+}
+.cpage-policy-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #6b7280; /* subtle meta info */
+  margin-bottom: 1rem;
+}
+
+/* Actions */
+.cpage-policy-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cpage-details-btn,
+.cpage-apply-btn,
+.cpage-compare-btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  transition: 0.3s;
+}
+.cpage-details-btn {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cpage-details-btn:hover {
+  background-color: #c7d2fe;
+}
+.cpage-apply-btn {
+  background: linear-gradient(90deg, #f43f5e, #fb7185); /* Red-Pink gradient */
+  color: #fff;
+  font-weight: bold;
+}
+.cpage-apply-btn:hover {
+  opacity: 0.9;
+}
+.cpage-compare-btn {
+  background-color: #fef3c7; /* Soft yellow */
+  color: #b45309; /* Dark yellow */
+  font-weight: 600;
+}
+.cpage-compare-btn:hover {
+  background-color: #fde68a;
+}
+.cpage-compare-btn.active {
+  background: #34d399; /* Green highlight */
+  color: #fff;
+}
+
+/* Badges */
+.cpage-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: bold;
+}
+.cpage-badge.popular {
+  background-color: #f59e0b; /* Orange */
+}
+.cpage-badge.best {
+  background-color: #10b981; /* Green */
+}
+
+/* Load More */
+.cpage-load-more {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cpage-load-more button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.cpage-load-more button:hover {
+  opacity: 0.9;
+}
+
+/* Compare Fixed Button */
+.cpage-compare-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Loading / No Policy */
+.cpage-loading-text,
+.cpage-no-policy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+
+
+
+/* Controls Section */
+.cpage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+  background: #f0f4ff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+/* Search Input */
+.cpage-search-input {
+  flex: 2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+.cpage-search-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px rgba(139,92,246,0.3);
+  outline: none;
+}
+
+/* Sort Select */
+.cpage-sort-select {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cpage-sort-select:hover,
+.cpage-sort-select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px rgba(139,92,246,0.2);
+  outline: none;
+}
+
+/* Reset Button */
+.cpage-reset-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: #f87171; /* Soft Red */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cpage-reset-btn:hover {
+  background: #ef4444; /* Darker Red on hover */
+  transform: translateY(-2px);
+}
+
+/* Min/Max Price & Cover Inputs */
+.cpage-controls input[type="number"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.cpage-controls input[type="number"]:focus {
+  border-color: #34d399; /* Green focus */
+  box-shadow: 0 0 10px rgba(52,211,153,0.3);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cpage-controls {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+
+
+
+
+/* Container */
+.cpage-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
+}
+
+/* Breadcrumb */
+.cpage-breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.cpage-breadcrumb a {
+  text-decoration: none;
+  color: #8b5cf6;
+}
+
+/* Header */
+.cpage-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #7c3aed;
+}
+.cpage-header p {
+  font-size: 1rem;
+  color: #555;
+}
+.cpage-header img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Controls Section */
+.cpage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+  background: #eef2ff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+/* Search Input */
+.cpage-search-input {
+  flex: 2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+.cpage-search-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px rgba(139,92,246,0.3);
+  outline: none;
+}
+
+/* Sort Select */
+.cpage-sort-select {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cpage-sort-select:hover,
+.cpage-sort-select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px rgba(139,92,246,0.2);
+  outline: none;
+}
+
+/* Reset Button */
+.cpage-reset-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cpage-reset-btn:hover {
+  background: #ef4444;
+  transform: translateY(-2px);
+}
+
+/* Min/Max Price & Cover Inputs */
+.cpage-controls input[type="number"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.cpage-controls input[type="number"]:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 10px rgba(52,211,153,0.3);
+  outline: none;
+}
+
+/* Policy Grid */
+.cpage-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Policy Card */
+.cpage-policy-card {
+  background: linear-gradient(135deg, #fef9c3, #dbeafe, #fde68a, #a5f3fc);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.cpage-policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+.cpage-policy-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.cpage-policy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #4f46e5;
+}
+.cpage-policy-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.cpage-policy-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Actions */
+.cpage-policy-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cpage-details-btn,
+.cpage-apply-btn,
+.cpage-compare-btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+.cpage-details-btn {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  text-decoration: none;
+  display: inline-block;
+}
+.cpage-details-btn:hover {
+  background-color: #c7d2fe;
+}
+.cpage-apply-btn {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+}
+.cpage-apply-btn:hover {
+  opacity: 0.9;
+}
+.cpage-compare-btn {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+.cpage-compare-btn:hover {
+  background-color: #e5e7eb;
+}
+.cpage-compare-btn.active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* Badges */
+.cpage-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+.cpage-badge.popular {
+  background-color: #f59e0b;
+}
+.cpage-badge.best {
+  background-color: #10b981;
+}
+
+/* Load More */
+.cpage-load-more {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cpage-load-more button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  cursor: pointer;
+}
+.cpage-load-more button:hover {
+  opacity: 0.9;
+}
+
+/* Compare Fixed Button */
+.cpage-compare-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Loading / No Policy */
+.cpage-loading-text,
+.cpage-no-policy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .cpage-controls input[type="number"] {
+    flex: 1 1 45%;
+  }
+}
+@media (max-width: 900px) {
+  .cpage-controls {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .cpage-controls input[type="number"],
+  .cpage-sort-select,
+  .cpage-reset-btn,
+  .cpage-search-input {
+    flex: 1 1 100%;
+  }
+  .cpage-policy-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .cpage-header h1 {
+    font-size: 1.8rem;
+  }
+  .cpage-policy-card img {
+    height: 140px;
+  }
+}

@@ -1,0 +1,143 @@
+.partners-page {
+  min-height: 100vh;
+  padding: 60px 8%;
+  background: radial-gradient(circle at top left, #d7d2ff, #f8f6ff 50%, #ffffff);
+  color: #222;
+  font-family: "Poppins", sans-serif;
+}
+
+.partners-title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: #4a148c;
+  margin-bottom: 10px;
+}
+
+.partners-subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.partners-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.partners-search input {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.partners-search input:focus {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.partner-card-glass {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.partner-card-glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2);
+}
+
+.partner-image-wrapper {
+  height: 80px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.partner-card-glass h3 {
+  color: #3a0ca3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.partner-card-glass p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.visit-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+  background: linear-gradient(135deg, #5a0ee2, #c9067b);
+  transform: scale(1.05);
+}
+
+.loading-text,
+.error-text,
+.no-results {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 40px;
+  color: #6a1b9a;
+}
+
+.back-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.back-btn {
+  background: #4a148c;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background: #6a1b9a;
+  transform: scale(1.05);
+}
