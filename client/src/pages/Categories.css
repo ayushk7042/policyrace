@@ -1,0 +1,219 @@
+/* General Container */
+.catpage-container {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7fb;
+  color: #333;
+}
+
+/* Header */
+.catpage-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.catpage-title {
+  font-size: 2.5rem;
+  color: #5e3ca7;
+  font-weight: 700;
+}
+
+.catpage-subtitle {
+  font-size: 1.1rem;
+  color: #6b5ca3;
+  margin-top: 0.5rem;
+}
+
+/* Search */
+.catpage-search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.catpage-search-input {
+  width: 100%;
+  max-width: 450px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 35px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(94, 60, 167, 0.2);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.catpage-search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 20px rgba(94, 60, 167, 0.35);
+}
+
+/* Grid Layout */
+.catpage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styles */
+.catpage-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(94, 60, 167, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.catpage-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(94, 60, 167, 0.25);
+}
+
+/* Card Image */
+.catpage-card-image {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 0.7rem auto;
+}
+
+.catpage-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.catpage-card:hover .catpage-card-image img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Card Body */
+.catpage-card-body {
+  position: relative;
+}
+
+.catpage-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5e3ca7;
+  margin-bottom: 0.5rem;
+}
+
+/* Badges */
+.catpage-badge {
+  display: inline-block;
+  background: #f59c00;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+}
+
+.catpage-badge.new {
+  background: #4caf50;
+}
+
+/* Loading / No Results */
+.catpage-loading,
+.catpage-no-results {
+  text-align: center;
+  color: #8a7ed3;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Featured Scroll Section */
+.catpage-featured {
+  margin-top: 4rem;
+}
+
+.catpage-featured-title {
+  font-size: 1.8rem;
+  color: #5e3ca7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Horizontal Scroll */
+.catpage-featured-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.catpage-featured-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.catpage-featured-scroll::-webkit-scrollbar-thumb {
+  background: #5e3ca7;
+  border-radius: 4px;
+}
+
+.catpage-featured-card {
+  min-width: 120px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(94,60,167,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.catpage-featured-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.catpage-featured-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(94,60,167,0.25);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .catpage-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .catpage-card-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catpage-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  .catpage-card-image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catpage-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  .catpage-card-image {
+    width: 55px;
+    height: 55px;
+  }
+  .catpage-card-title {
+    font-size: 0.95rem;
+  }
+}

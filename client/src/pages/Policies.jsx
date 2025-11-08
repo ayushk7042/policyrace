@@ -1,96 +1,10 @@
-// import React, { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import api from "../api/axios";
-// import "./Policies.css";
 
-// const Policies = () => {
-//   const [policies, setPolicies] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [search, setSearch] = useState("");
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const fetchPolicies = async () => {
-//       try {
-//         const res = await api.get("/policies");
-//         const data = Array.isArray(res.data)
-//           ? res.data
-//           : res.data.policies || [];
-//         setPolicies(data);
-//       } catch (err) {
-//         console.error("Error fetching policies:", err);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchPolicies();
-//   }, []);
-
-//   const filteredPolicies = policies.filter((p) =>
-//     p.title?.toLowerCase().includes(search.toLowerCase())
-//   );
-
-//   return (
-//     <div className="policies-page">
-//       <h1 className="policies-heading">All Insurance Policies</h1>
-//       <p className="policies-subtext">
-//         Explore all available Life, Health, Vehicle, and Investment policies at one place.
-//       </p>
-
-//       {/* 🔍 Search Box */}
-//       <div className="policy-search">
-//         <input
-//           type="text"
-//           placeholder="Search policy name..."
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//         />
-//       </div>
-
-//       {loading ? (
-//         <p className="loading-text">Loading policies...</p>
-//       ) : filteredPolicies.length === 0 ? (
-//         <p className="no-policies">No matching policies found.</p>
-//       ) : (
-//         <div className="policies-grid">
-//           {filteredPolicies.map((p) => (
-//             <div
-//               className="policy-card"
-//               key={p._id}
-//               onClick={() => navigate(`/policy/${p._id}`)}
-//             >
-//               <div className="policy-image">
-//                 <img
-//                   src={p.imageUrl || p.image || "https://via.placeholder.com/150"}
-//                   alt={p.title}
-//                 />
-//               </div>
-//               <div className="policy-details">
-//                 <h3>{p.title}</h3>
-//                 <p className="policy-category">
-//                   {p.category?.name || "General Insurance"}
-//                 </p>
-//                 <div className="policy-stats">
-//                   <span>💰 Life Cover: {p.lifeCover || "N/A"}</span>
-//                   <span>⚡ Claim: {p.claimSettlement || "N/A"}%</span>
-//                 </div>
-//                 <button className="view-btn">View Details</button>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Policies;
 
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
-import "./Policies.css";
+import "./Policies1.css";
 
 const Policies = () => {
   const [policies, setPolicies] = useState([]);

@@ -38,13 +38,23 @@ api.interceptors.request.use((config) => {
   const adminToken = localStorage.getItem("adminToken");
   const userToken = localStorage.getItem("token");
 
-  if (adminToken) {
-    config.headers.Authorization = `Bearer ${adminToken}`;
-  } else if (userToken) {
-    config.headers.Authorization = `Bearer ${userToken}`;
-  }
+  // if (adminToken) {
+  //   config.headers.Authorization = `Bearer ${adminToken}`;
+  // } else if (userToken) {
+  //   config.headers.Authorization = `Bearer ${userToken}`;
+  // }
+
+  if (userToken) {
+      config.headers.Authorization = `Bearer ${userToken}`;
+    } else if (adminToken) {
+      config.headers.Authorization = `Bearer ${adminToken}`;
+    }
 
   return config;
-});
+
+   },
+  (error) => Promise.reject(error)
+);
+
 
 export default api;

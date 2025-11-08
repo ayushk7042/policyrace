@@ -3132,117 +3132,151 @@ body {
 
 
 
-/* ===================== Reviews Section ===================== */
 .reviews {
-  padding: 60px 8%;
-  background: linear-gradient(135deg, #f8f6ff, #ffffff);
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 100%);
   text-align: center;
 }
 
-.reviews h2 {
-  color: #4a148c;
+.reviews-title {
   font-size: 2rem;
-  margin-bottom: 30px;
+  color: #2b2b52;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 .review-form {
-  margin-bottom: 40px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: inline-block;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto 3rem;
   text-align: left;
-  width: 100%;
-  max-width: 500px;
 }
 
 .review-form h3 {
-  text-align: center;
-  color: #3a0ca3;
-  margin-bottom: 15px;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .review-form textarea {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
+  padding: 0.8rem;
   border-radius: 10px;
-  padding: 10px;
   border: 1px solid #ccc;
-  outline: none;
-  resize: none;
   font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  resize: none;
 }
 
 .rating-select {
-  text-align: center;
-  margin-bottom: 10px;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .star {
+  font-size: 1.6rem;
   cursor: pointer;
-  font-size: 1.5rem;
   color: #ccc;
-  margin: 0 3px;
-  transition: 0.3s;
+  transition: transform 0.2s, color 0.3s;
 }
 
+.star:hover,
 .star.active {
   color: #ffb400;
   transform: scale(1.2);
 }
 
 .review-form button {
-  display: block;
-  width: 100%;
-  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  background: #4a5eff;
   color: white;
   border: none;
-  border-radius: 25px;
-  padding: 10px 0;
-  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .review-form button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #5a0ee2, #c9067b);
-}
-
-.review-carousel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-content: center;
-}
-
-.review-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-
-.review-card:hover {
-  transform: translateY(-4px);
-}
-
-.review-card h4 {
-  color: #3a0ca3;
-  margin-bottom: 8px;
-}
-
-.review-card p {
-  color: #555;
-  font-style: italic;
+  background: #3547d6;
 }
 
 .login-prompt {
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* 🔸 Review Cards */
+.review-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.review-card {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 340px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: #4a5eff;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-text {
+  color: #444;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #ffb400;
+}
+
+.rating-number {
+  color: #333;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+.no-review {
   color: #666;
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }

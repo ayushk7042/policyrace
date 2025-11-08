@@ -81,7 +81,7 @@ exports.addReview = async (req, res) => {
 
    
 
-    res.status(201).json({ message: "Review added", review });
+    res.status(201).json({ message: "Review added", review: populatedReview });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });

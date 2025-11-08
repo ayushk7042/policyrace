@@ -5,7 +5,7 @@ import api from "../api/axios";
 
 import { AuthContext } from "../context/AuthContext";
 
-import "./Home.css";
+import "./Home1.css";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -118,7 +118,11 @@ const handleAddReview = async () => {
       { comment, rating },
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    setReviews([res.data.review, ...reviews]);
+
+    const newReview = res.data.review;
+setReviews((prev) => [newReview, ...prev]);
+
+    //setReviews([res.data.review, ...reviews]);
     setComment("");
     setRating(0);
     alert("✅ Review added successfully!");
@@ -228,38 +232,7 @@ useEffect(() => {
 
 
 
-
-
-{/* <section className="policies">
-  <h2>Top Insurance Policies</h2>
-  <div className="policy-grid">
-    {policies.map((p) => (
-      <div className="policy-item" key={p._id}>
-        <div className="policy-top">
-          <img
-            src={p.imageUrl || p.image}
-            alt={p.title}
-            className="policy-icon"
-          />
-          <div className="policy-info">
-            <h3>{p.title}</h3>
-            <p className="category">{p.category?.name || "General Insurance"}</p>
-          </div>
-        </div>
-
-        <div className="policy-bottom">
-          <span>Life Cover: {p.lifeCover}</span>
-          <span>Claim: {p.claimSettlement}%</span>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
- */}
-
-
-
- <section className="policies">
+ {/* <section className="policies">
   <h2>Top Insurance Policies</h2>
   <div className="policy-grid">
     {policies.map((p) => (
@@ -288,27 +261,92 @@ useEffect(() => {
       </div>
     ))}
   </div>
+</section> */}
+
+<section className="policies">
+  <h2>Top Insurance Policies</h2>
+  <div className="policy-grid">
+    {policies.map((p) => (
+      <div
+        className="policy-item"
+        key={p._id}
+        onClick={() => navigate(`/policy/${p._id}`)}
+        style={{ cursor: "pointer" }}
+      >
+        <div className="policy-top">
+          <img
+            src={p.imageUrl || p.image}
+            alt={p.title}
+            className="policy-icon"
+          />
+          <div className="policy-info">
+            <h3>{p.title}</h3>
+            <p className="category">{p.category?.name || "General Insurance"}</p>
+          </div>
+        </div>
+
+        <div className="policy-bottom">
+          <span>💰 Life Cover: {p.lifeCover}</span>
+          <span>✅ Claim: {p.claimSettlement}%</span>
+        </div>
+
+        <button className="compare-btn">Compare Now</button>
+      </div>
+    ))}
+  </div>
 </section>
 
 
 
 
       {/* 🔹 Feature Boxes */}
-      <section className="features">
+      {/* <section className="features">
         <div className="feature-box blue">💰 Save Big on Premiums</div>
         <div className="feature-box orange">⚡ Fast Claim Settlement</div>
         <div className="feature-box green">🛡️ 100% Secure Transactions</div>
       </section>
 
-      {/* 🔹 Info Icons */}
+      
       <section className="info-icons">
         <div>🏦 50+ Insurance Partners</div>
         <div>🕐 24x7 Support</div>
         <div>👥 5M+ Users</div>
         <div>🚀 Instant Comparison</div>
-      </section>
+      </section> */}
 
-    
+    {/* 🌟 Premium Feature Highlights */}
+<section className="features">
+  <div className="feature-box blue">
+    💰 <span>Save Big on Premiums</span>
+  </div>
+  <div className="feature-box orange">
+    ⚡ <span>Fast Claim Settlement</span>
+  </div>
+  <div className="feature-box green">
+    🛡️ <span>100% Secure Transactions</span>
+  </div>
+</section>
+
+{/* 🌟 Info Statistics */}
+<section className="info-icons">
+  <div>
+    🏦 <span>50+ Insurance Partners</span>
+  </div>
+  <div>
+    🕐 <span>24x7 Support</span>
+  </div>
+  <div>
+    👥 <span>5M+ Trusted Users</span>
+  </div>
+  <div>
+    🚀 <span>Instant Policy Comparison</span>
+  </div>
+</section>
+
+
+
+
+
 {/* 🔹 Policy Insights Hero Section (Minimal Design) */}
 <section className="insight-hero clean">
   <div className="insight-left">
@@ -359,7 +397,7 @@ useEffect(() => {
 
 
 {/* 🔹 Our Advantages Section */}
-<section className="advantage-section">
+{/* <section className="advantage-section">
   <h2>Why Choose Us</h2>
   <p className="advantage-subtext">
     When you choose us, you get more than just insurance. You get trust,
@@ -449,33 +487,82 @@ useEffect(() => {
   </div>
 
   <button className="know-more-btn">Know More</button>
-</section>
+</section> */}
 
+<section className="advantage-section">
+  <h2 className="advantage-title">Why Choose Us</h2>
+  <p className="advantage-subtext">
+    When you choose us, you get more than just insurance — you get trust,
+    transparency, and a partner who’s with you at every step.
+  </p>
+
+  <div className="advantage-grid">
+    {[
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/1041/1041916.png",
+        title: "Best Prices Guaranteed",
+        desc: "Instant quotes from top insurers with unbeatable premium options.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        title: "Unbiased Expert Advice",
+        desc: "Recommendations that keep customers first — always.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/942/942799.png",
+        title: "100% Reliable & Secure",
+        desc: "Fully regulated by IRDAI — ensuring your safety and peace of mind.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/1048/1048953.png",
+        title: "Hassle-free Claim Support",
+        desc: "We simplify your claim process for a quick and stress-free experience.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/868/868786.png",
+        title: "Here for You, Always",
+        desc: "Friendly customer support available every day of the week.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2910/2910762.png",
+        title: "Exclusive Offers & Deals",
+        desc: "Special discounts and offers curated only for our customers.",
+      },
+
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/3103/3103446.png",
+        title: "Simple & Fast Process",
+        desc: "From quote to claim — everything in a few clicks.",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/1643/1643794.png",
+        title: "Trusted by Millions",
+        desc: "Over 5 million+ users rely on our platform for secure insurance.",
+      },
+    ].map((item, idx) => (
+      <div key={idx} className="advantage-box">
+        <div className="advantage-icon">
+          <img src={item.icon} alt={item.title} />
+        </div>
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <button className="know-more-btn">Know More</button>
+</section>
 
 
       
 
 
-{/* <section className="reviews">
-  <h2>What Our Users Say</h2>
-
-  <div className="review-carousel">
-    {reviews.map((r) => (
-      <div className="review-card" key={r._id}>
-        <h4>{r.userName}</h4>
-        <p>"{r.comment}"</p>
-        <span>⭐ {r.rating}/5</span>
-      </div>
-    ))}
-  </div>
-</section> */}
 
 
 {/* 🔹 Reviews Section */}
 <section className="reviews">
-  <h2>What Our Users Say</h2>
+  <h2 className="reviews-title">💬 What Our Users Say</h2>
 
-  {/* 🔸 Review Form (Only for Logged-in Users) */}
   {user ? (
     <div className="review-form">
       <h3>Share Your Experience</h3>
@@ -498,22 +585,33 @@ useEffect(() => {
       <button onClick={handleAddReview}>Submit Review</button>
     </div>
   ) : (
-    <p className="login-prompt">Please login to share your review.</p>
+    <p className="login-prompt">Please login to share your review 😊</p>
   )}
 
-  {/* 🔸 Review Display Carousel */}
-  <div className="review-carousel">
-    {reviews.length > 0 ? (
-      reviews.map((r) => (
-        <div className="review-card" key={r._id}>
-          <h4>{r.user?.name || "Anonymous"}</h4>
-          <p>"{r.comment}"</p>
-          <span>⭐ {r.rating}/5</span>
-        </div>
-      ))
-    ) : (
-      <p>No reviews yet. Be the first to share your experience!</p>
-    )}
+  <div className="review-carousel-wrapper">
+    <div className="review-carousel">
+      {reviews.length > 0 ? (
+        [...reviews, ...reviews].map((r, idx) => (
+          <div className="review-card" key={r._id || idx}>
+            <div className="review-header">
+              <div className="avatar">
+                {r.user?.name?.charAt(0).toUpperCase() || "U"}
+              </div>
+              <h4>{r.user?.name || "Anonymous"}</h4>
+            </div>
+            <p className="review-text">“{r.comment}”</p>
+            <div className="review-rating">
+              {Array.from({ length: r.rating }, (_, i) => (
+                <span key={i}>⭐</span>
+              ))}
+              <span className="rating-number">{r.rating}/5</span>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p className="no-review">No reviews yet. Be the first to share!</p>
+      )}
+    </div>
   </div>
 </section>
 
@@ -521,7 +619,7 @@ useEffect(() => {
 
 
 {/* 🔹 Insurance Tips */}
-<section className="tips-section">
+{/* <section className="tips-section">
   <h2>Smart Insurance Tips</h2>
   <div className="tips-grid">
     <div className="tip-card">📅 Always renew before expiry to keep benefits active.</div>
@@ -529,12 +627,24 @@ useEffect(() => {
     <div className="tip-card">💰 Use online payment discounts for lower premiums.</div>
     <div className="tip-card">👨‍👩‍👧 Get family floater for cost-effective health cover.</div>
   </div>
+</section> */}
+
+<section className="tips-section">
+  <h2>💡 Smart Insurance Tips</h2>
+  <div className="tips-grid">
+   
+    <div className="tip-card">🧾 Compare plans yearly for better deals.</div>
+   
+    <div className="tip-card">👨‍👩‍👧 Get family floater for cost-effective health cover.</div>
+    <div className="tip-card">⚡ Choose riders wisely — only what adds real value.</div>
+    <div className="tip-card">🔒 Always read the fine print for hidden charges.</div>
+  </div>
 </section>
 
 
 
       {/* 🔹 Partners Section */}
-      <section className="partners">
+      {/* <section className="partners">
         <h2>Our Trusted Partners</h2>
         <div className="partner-grid">
           {partners.map((p) => (
@@ -544,12 +654,92 @@ useEffect(() => {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
+
+
+      <section className="partners">
+  <h2>🤝 Our Trusted Partners</h2>
+
+  <div className="partner-carousel">
+    <div className="partner-track">
+      {partners.map((p) => (
+        <Link
+          to={`/post/${p.title.replace(/\s+/g, "-").toLowerCase()}`}
+          key={p._id}
+          className="partner-card"
+        >
+          <div className="partner-img-wrapper">
+            <img src={p.iconUrl || p.image} alt={p.title} />
+          </div>
+          <p>{p.title}</p>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* 🔹 Footer */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <p>© 2025 PolicyRace. All Rights Reserved.</p>
-      </footer>
+      </footer> */}
+
+
+      <footer className="footer">
+  <div className="footer-container">
+    {/* About Section */}
+    <div className="footer-section about">
+      <h3>PolicyRace</h3>
+      <p>
+        Compare, choose, and save on top insurance plans. Trusted by millions
+        of users across India.
+      </p>
+    </div>
+
+    {/* Quick Links */}
+    <div className="footer-section links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/policies">Policies</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/partners">Partners</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    {/* Resources */}
+    <div className="footer-section resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    {/* Social & Newsletter */}
+    <div className="footer-section social-newsletter">
+      <h4>Connect With Us</h4>
+      <div className="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook"/></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"/></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Instagram"/></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="LinkedIn"/></a>
+      </div>
+      <h4>Subscribe</h4>
+      <div className="newsletter">
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div className="footer-bottom">
+    <p>© 2025 PolicyRace. All Rights Reserved.</p>
+  </div>
+</footer>
+
     </div>
   );
 };

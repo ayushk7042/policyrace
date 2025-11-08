@@ -82,6 +82,8 @@ import PolicyDetails from "./pages/PolicyDetails";
 import Calculator from "./pages/Calculator";
 import Policies from "./pages/Policies";
 import Partners from "./pages/Partners";
+import Contact from "./pages/Contact";
+import CategoriesPage from "./pages/Categories";
 
 
 const App = () => {
@@ -103,6 +105,9 @@ const App = () => {
 <Route path="/calculator" element={<Calculator />} />
 <Route path="/policies" element={<Policies />} />
 <Route path="/partners" element={<Partners />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/categories" element={<CategoriesPage />} />
+
 
 
 
