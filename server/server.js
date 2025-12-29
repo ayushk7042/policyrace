@@ -28,5 +28,5 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/hero", heroRoutes);
 app.use('/api/calculators', calculatorRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

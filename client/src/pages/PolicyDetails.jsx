@@ -1,10 +1,12 @@
 
 
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../api/axios";
 import "./PolicyDetails1.css";
+
+import { AuthContext } from "../context/AuthContext";
 
 const PolicyDetails = () => {
   const { id } = useParams();
@@ -13,11 +15,17 @@ const PolicyDetails = () => {
   const [selectedQuiz, setSelectedQuiz] = useState({});
   const [showFlowStep, setShowFlowStep] = useState({});
 
+const [saved, setSaved] = useState(false);
+const { user } = useContext(AuthContext); 
+
   useEffect(() => {
     const fetchPolicy = async () => {
       try {
         const res = await api.get(`/policies/${id}`);
         setPolicy(res.data.policy);
+
+        // Check if policy is already saved by user
+        if (user?.savedPolicies?.includes(id)) setSaved(true);
       } catch (err) {
         console.error("Error fetching policy", err);
       } finally {
@@ -25,7 +33,44 @@ const PolicyDetails = () => {
       }
     };
     fetchPolicy();
-  }, [id]);
+  }, [id, user]);
+
+  //  const handleSavePolicy = async () => {
+  //   if (!user) {
+  //     alert("Please login to save policies!");
+  //     return;
+  //   }
+
+  //   try {
+  //     const res = await api.post(`/users/${user._id}/save-policy`, { policyId: id });
+  //     if (res.status === 200) {
+  //       setSaved(true);
+  //       alert("Policy saved to your dashboard!");
+  //     }
+  //   } catch (err) {
+  //     console.error("Error saving policy", err);
+  //     alert("Failed to save policy. Try again.");
+  //   }
+  // };
+const handleSavePolicy = async () => {
+  if (!user || !user._id) {
+    alert("Please login to save policies!");
+    return;
+  }
+
+  try {
+    const res = await api.post(`/auth/${user._id}/save-policy`, { policyId: id });
+    if (res.status === 200) {
+      setSaved(true);
+      alert("Policy saved to your dashboard!");
+    }
+  } catch (err) {
+    console.error("Error saving policy", err);
+    alert("Failed to save policy. Try again.");
+  }
+};
+
+
 
   const toggleStep = (i) =>
     setShowFlowStep((prev) => ({ ...prev, [i]: !prev[i] }));
@@ -56,6 +101,16 @@ const PolicyDetails = () => {
         >
           Apply Now
         </a>
+
+ {/* Save Policy Button */}
+  <button
+    className={`summary-btn save-btn ${saved ? "saved" : ""}`}
+    onClick={handleSavePolicy}
+    disabled={!user}
+  >
+    {saved ? "✅ Saved" : "💾 Save Policy"}
+  </button>
+
       </div>
 
       {/* Quick Navigation */}

@@ -14,7 +14,12 @@ const userSchema = new mongoose.Schema({
     tasksCompleted: { type: Number, default: 0 },
     policiesApplied: { type: Number, default: 0 },
     checksMade: { type: Number, default: 0 }
-  }
+  },
+   savedPolicies: [
+    { type: mongoose.Schema.Types.ObjectId, ref: "Policy" }
+  ]
+
+  
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

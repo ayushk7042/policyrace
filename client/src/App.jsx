@@ -84,6 +84,8 @@ import Policies from "./pages/Policies";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import CategoriesPage from "./pages/Categories";
+import BlogPage from "./pages/BlogPage";
+import TermsPage from "./pages/TermsPage";
 
 
 const App = () => {
@@ -107,6 +109,10 @@ const App = () => {
 <Route path="/partners" element={<Partners />} />
 <Route path="/contact" element={<Contact />} />
 <Route path="/categories" element={<CategoriesPage />} />
+<Route path="/blog" element={<BlogPage />} />
+<Route path="/terms" element={<TermsPage />} />
+
+
 
 
 

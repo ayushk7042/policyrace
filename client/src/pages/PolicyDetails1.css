@@ -441,3 +441,68 @@
   margin-bottom: 0.5rem;
   border-radius: 8px;
 }
+
+
+
+
+
+
+/* ---------- Normal Button ---------- */
+.save-btn-normal {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  background-color: #5e3ca7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.save-btn-normal:hover {
+  background-color: #7a50d3;
+}
+
+.save-btn-normal.saved {
+  background-color: #4caf50;
+  cursor: default;
+}
+
+/* ---------- Box Type Save ---------- */
+.save-btn-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 100px;
+  padding: 0.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6a0dad, #a34ed0);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.save-btn-box:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(106, 13, 173, 0.35);
+  background: linear-gradient(135deg, #7e2fd6, #b36cf0);
+}
+
+.save-btn-box.saved {
+  background: linear-gradient(135deg, #28a745, #5cd65c);
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+  cursor: default;
+}
+
+.save-btn-box svg {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 4px;
+}

@@ -665,6 +665,8 @@ useEffect(() => {
       {partners.map((p) => (
         <Link
           to={`/post/${p.title.replace(/\s+/g, "-").toLowerCase()}`}
+
+         
           key={p._id}
           className="partner-card"
         >

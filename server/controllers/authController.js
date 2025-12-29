@@ -115,3 +115,65 @@ exports.getProfile = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+
+
+// Save a policy for a logged-in user
+exports.savePolicy = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const { policyId } = req.body;
+
+    if (!policyId) {
+      return res.status(400).json({ message: 'Policy ID is required.' });
+    }
+
+    const user = await User.findById(userId);
+    const policy = await Policy.findById(policyId);
+
+    if (!user) return res.status(404).json({ message: 'User not found.' });
+    if (!policy) return res.status(404).json({ message: 'Policy not found.' });
+
+    // Check if already saved
+    if (user.savedPolicies && user.savedPolicies.includes(policyId)) {
+      return res.status(200).json({ message: 'Policy already saved.' });
+    }
+
+    // Initialize array if undefined
+    if (!user.savedPolicies) user.savedPolicies = [];
+
+    user.savedPolicies.push(policyId);
+    await user.save();
+
+    res.status(200).json({ message: 'Policy saved successfully.', savedPolicies: user.savedPolicies });
+  } catch (err) {
+    console.error('Error saving policy:', err);
+    res.status(500).json({ message: 'Server error.' });
+  }
+};
+
+// Get all saved policies of a user
+exports.getSavedPolicies = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    const user = await User.findById(userId).populate('savedPolicies');
+    if (!user) return res.status(404).json({ message: 'User not found.' });
+
+    res.status(200).json({ savedPolicies: user.savedPolicies });
+  } catch (err) {
+    console.error('Error fetching saved policies:', err);
+    res.status(500).json({ message: 'Server error.' });
+  }
+};
+
+// Admin view: get all users and their saved policies
+exports.getAllUsersSavedPolicies = async (req, res) => {
+  try {
+    const users = await User.find().populate('savedPolicies', 'title policyType'); // fetch only title & type
+    res.status(200).json({ users });
+  } catch (err) {
+    console.error('Error fetching all users saved policies:', err);
+    res.status(500).json({ message: 'Server error.' });
+  }
+};
