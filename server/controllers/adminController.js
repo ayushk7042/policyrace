@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const generateAdminToken = (admin) => {
-  return jwt.sign({ id: admin._id, role: 'admin' }, process.env.JWT_SECRET, {
+  return jwt.sign({ id: admin._id, role: 'admin' }, process.env.ADMIN_JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || '7d'
   });
 };

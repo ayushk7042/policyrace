@@ -1,0 +1,361 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+.cpage-container {
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  padding: 30px 16px 80px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+
+/* ===============================
+   LOADING
+================================ */
+.cpage-loading-text {
+  text-align: center;
+  font-size: 18px;
+  color: #64748b;
+  margin-top: 100px;
+}
+
+/* ===============================
+   BREADCRUMB
+================================ */
+.cpage-breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto 16px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.cpage-breadcrumb a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===============================
+   HEADER (PREMIUM HERO)
+================================ */
+.cpage-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+  border-radius: 26px;
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+  text-align: center;
+}
+
+.cpage-header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cpage-header p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #475569;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cpage-header img {
+  margin-top: 22px;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   FILTER CONTROLS
+================================ */
+.cpage-controls {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+
+.cpage-controls input,
+.cpage-controls select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.cpage-controls input:focus,
+.cpage-controls select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+.cpage-reset-btn {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cpage-reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239,68,68,0.35);
+}
+
+/* ===============================
+   POLICY GRID
+================================ */
+.cpage-policy-grid {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+/* ===============================
+   POLICY CARD (PREMIUM)
+================================ */
+.cpage-policy-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpage-policy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(79,70,229,0.25);
+}
+
+/* BADGES */
+.cpage-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  color: white;
+}
+
+.cpage-badge.popular {
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+}
+
+.cpage-badge.best {
+  background: linear-gradient(90deg, #10b981, #22c55e);
+}
+
+/* IMAGE */
+.cpage-policy-card img {
+  height: 150px;
+  object-fit: contain;
+  margin: 10px auto 14px;
+  transition: transform 0.4s ease;
+}
+
+.cpage-policy-card:hover img {
+  transform: scale(1.08);
+}
+
+/* INFO */
+.cpage-policy-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cpage-policy-info p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* META */
+.cpage-policy-meta {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.life-cover.high,
+.claim-percent.high {
+  color: #16a34a;
+}
+
+.life-cover.low,
+.claim-percent.low {
+  color: #dc2626;
+}
+
+/* ACTIONS */
+.cpage-policy-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cpage-policy-actions a,
+.cpage-policy-actions button {
+  flex: 1;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.cpage-details-btn {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.cpage-apply-btn {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  color: white;
+}
+
+.cpage-compare-btn {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.cpage-compare-btn.active {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+}
+
+/* ===============================
+   LOAD MORE
+================================ */
+.cpage-load-more {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cpage-load-more button {
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6366f1, #7c3aed);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(99,102,241,0.4);
+}
+
+/* ===============================
+   COMPARE FIXED BUTTON
+================================ */
+.cpage-compare-fixed-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 26px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 18px 40px rgba(79,70,229,0.45);
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .cpage-header h1 {
+    font-size: 26px;
+  }
+
+  .cpage-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .cpage-policy-card img {
+    height: 120px;
+  }
+}
+
+
+
+
+
+/* PAGE BACKGROUND FIX */
+.cpage-container {
+  background: #f8fafc;   /* same clean site-like color */
+  min-height: 100vh;
+  padding: 24px 16px 70px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #0f172a;
+}
+/* HEADER – COMPACT & PREMIUM */
+.cpage-header {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+.cpage-header h1 {
+  font-size: 24px;          /* chhota */
+  font-weight: 700;
+  color: #0f172a;           /* solid black */
+  margin-bottom: 6px;
+}
+.cpage-header p {
+  font-size: 14px;
+  color: #64748b;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.cpage-header img {
+  margin-top: 14px;
+  max-width: 100%;
+  max-height: 160px;        /* IMPORTANT: chhota */
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+@media (max-width: 768px) {
+  .cpage-header {
+    padding: 18px 14px;
+  }
+
+  .cpage-header h1 {
+    font-size: 20px;
+  }
+
+  .cpage-header img {
+    max-height: 130px;
+  }
+}

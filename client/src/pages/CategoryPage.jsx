@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../api/axios";
-import "./CategoryPageStyles.css";
+import "./Categorypage.css";
 import CompareModal from "../components/CompareModal";
 
 const CategoryPage = () => {

@@ -87,7 +87,16 @@ policyType: {
     sumInsured: String,
     naturalDisasterCover: Boolean,
     burglaryCover: Boolean
-  }
+  },
+
+  // inside policySchema
+
+ctaLinks: {
+  apply: { type: String, default: "" },
+  afterQuiz: { type: String, default: "" },
+  stickyBar: { type: String, default: "" }
+},
+
 
 }, { timestamps: true });
 

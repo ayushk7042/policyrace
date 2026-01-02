@@ -24,6 +24,14 @@ const PolicyManager = () => {
     title: "",
     imageUrl: "",
     shortDescription: "",
+
+     // ✅ CTA LINKS (NEW)
+  ctaLinks: {
+    apply: "",
+    afterQuiz: "",
+    stickyBar: "",
+  },
+
     lifeCover: "",
     coverTillAge: "",
     claimSettlement: "",
@@ -113,28 +121,78 @@ const PolicyManager = () => {
       [parentKey]: prev[parentKey].filter((_, i) => i !== index),
     }));
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const payload = { ...form, category: selectedCategory };
-      if (editId) {
-        await api.put(`/policies/${editId}`, payload, { headers });
-      } else {
-        await api.post("/policies", payload, { headers });
-      }
-      alert("✅ Policy saved!");
-      setEditId(null);
-      setForm(initialForm);
-      fetchPolicies(selectedCategory);
-    } catch (err) {
-      console.error(err);
-      alert("❌ Error saving policy");
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const payload = { ...form, category: selectedCategory };
+  //     if (editId) {
+  //       await api.put(`/policies/${editId}`, payload, { headers });
+  //     } else {
+  //       await api.post("/policies", payload, { headers });
+  //     }
+  //     alert("✅ Policy saved!");
+  //     setEditId(null);
+  //     setForm(initialForm);
+  //     fetchPolicies(selectedCategory);
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("❌ Error saving policy");
+  //   }
+  // };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!token) {
+    alert("Admin not logged in");
+    navigate("/admin/login");
+    return;
+  }
+
+  try {
+    const payload = {
+      ...form,
+      category: selectedCategory,
+    };
+
+    if (editId) {
+      // UPDATE POLICY
+      await api.put(`/policies/${editId}`, payload, { headers });
+      alert("✅ Policy updated successfully");
+    } else {
+      // CREATE POLICY
+      await api.post("/policies", payload, { headers });
+      alert("✅ Policy created successfully");
     }
-  };
+
+    setEditId(null);
+    setForm(initialForm);
+    fetchPolicies(selectedCategory);
+  } catch (error) {
+    console.error(error);
+    alert(error.response?.data?.message || "❌ Unauthorized");
+  }
+};
+
+
 
   const handleEdit = (policy) => {
     setEditId(policy._id);
-    setForm(policy);
+    //setForm(policy);
+setForm({
+      ...initialForm,
+      ...policy,
+      ctaLinks: policy.ctaLinks || {
+        apply: "",
+        afterQuiz: "",
+        stickyBar: "",
+      },
+      planDetail: {
+        ...initialForm.planDetail,
+        ...policy.planDetail,
+      },
+    });
+
   };
 
   const handleDelete = async (id) => {
@@ -318,6 +376,48 @@ const PolicyManager = () => {
     />
   </div>
 )}
+
+
+{/* CTA LINKS */}
+<div className="sub-section">
+  <h3>🔗 Apply / CTA Links</h3>
+
+  <input
+    type="text"
+    placeholder="Apply Now Link"
+    value={form.ctaLinks?.apply || ""}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        ctaLinks: { ...form.ctaLinks, apply: e.target.value },
+      })
+    }
+  />
+
+  <input
+    type="text"
+    placeholder="After Quiz Apply Link"
+    value={form.ctaLinks?.afterQuiz || ""}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        ctaLinks: { ...form.ctaLinks, afterQuiz: e.target.value },
+      })
+    }
+  />
+
+  <input
+    type="text"
+    placeholder="Sticky Bar Apply Link"
+    value={form.ctaLinks?.stickyBar || ""}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        ctaLinks: { ...form.ctaLinks, stickyBar: e.target.value },
+      })
+    }
+  />
+</div>
 
 
 

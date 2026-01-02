@@ -6,7 +6,7 @@ import api from "../api/axios";
 //u //
 import { AuthContext } from "../context/AuthContext";
 
-import "./Home1.css";
+import "./h.css";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -207,8 +207,10 @@ useEffect(() => {
       {/* 🔹 Categories Section */}
      
 
-      {/* 🟣 Insurance Categories Section */}
-<section className="categories-section">
+      
+
+
+ <section className="categories-section">
   <h2 className="section-heading">Explore Insurance Categories</h2>
 
   <div className="categories-container">
@@ -219,7 +221,11 @@ useEffect(() => {
         className="category-card"
       >
         <div className="category-image-wrapper">
-          <img src={cat.iconUrl || cat.icon} alt={cat.name} />
+          <img
+            src={cat.iconUrl || cat.icon}
+            alt={cat.name}
+            className="category-img"
+          />
         </div>
         <p className="category-title">{cat.name}</p>
       </Link>
@@ -233,66 +239,39 @@ useEffect(() => {
 
 
 
- {/* <section className="policies">
-  <h2>Top Insurance Policies</h2>
-  <div className="policy-grid">
-    {policies.map((p) => (
-      <div
-        className="policy-item"
-        key={p._id}
-        onClick={() => navigate(`/policy/${p._id}`)} // 👈 click navigation
-        style={{ cursor: "pointer" }}
-      >
-        <div className="policy-top">
-          <img
-            src={p.imageUrl || p.image}
-            alt={p.title}
-            className="policy-icon"
-          />
-          <div className="policy-info">
-            <h3>{p.title}</h3>
-            <p className="category">{p.category?.name || "General Insurance"}</p>
-          </div>
-        </div>
+ 
 
-        <div className="policy-bottom">
-          <span>Life Cover: {p.lifeCover}</span>
-          <span>Claim: {p.claimSettlement}%</span>
-        </div>
-      </div>
-    ))}
-  </div>
-</section> */}
 
-<section className="policies">
-  <h2>Top Insurance Policies</h2>
-  <div className="policy-grid">
-    {policies.map((p) => (
-      <div
-        className="policy-item"
+
+{/* 🔹 Premium Policies Section */}
+<section className="premium-policies">
+  <h2 className="section-heading">Top Insurance Policies for You</h2>
+  <p className="section-subheading">
+    Carefully selected policies with best coverage and minimal premiums.
+  </p>
+
+  <div className="premium-policy-grid">
+    {policies.slice(0, 12).map((p) => (
+      <motion.div
+        className="premium-policy-card"
         key={p._id}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
         onClick={() => navigate(`/policy/${p._id}`)}
-        style={{ cursor: "pointer" }}
       >
-        <div className="policy-top">
-          <img
-            src={p.imageUrl || p.image}
-            alt={p.title}
-            className="policy-icon"
-          />
-          <div className="policy-info">
-            <h3>{p.title}</h3>
-            <p className="category">{p.category?.name || "General Insurance"}</p>
+        <div className="policy-img-wrapper">
+          <img src={p.imageUrl || p.image} alt={p.title} />
+        </div>
+        <div className="policy-content">
+          <h3>{p.title}</h3>
+          <p className="category">{p.category?.name || "General Insurance"}</p>
+          <div className="policy-stats">
+            <span>💰 Life Cover: {p.lifeCover}</span>
+            <span>✅ Claim: {p.claimSettlement}%</span>
           </div>
+          <button className="compare-btn">Compare Now</button>
         </div>
-
-        <div className="policy-bottom">
-          <span>💰 Life Cover: {p.lifeCover}</span>
-          <span>✅ Claim: {p.claimSettlement}%</span>
-        </div>
-
-        <button className="compare-btn">Compare Now</button>
-      </div>
+      </motion.div>
     ))}
   </div>
 </section>
@@ -300,21 +279,7 @@ useEffect(() => {
 
 
 
-      {/* 🔹 Feature Boxes */}
-      {/* <section className="features">
-        <div className="feature-box blue">💰 Save Big on Premiums</div>
-        <div className="feature-box orange">⚡ Fast Claim Settlement</div>
-        <div className="feature-box green">🛡️ 100% Secure Transactions</div>
-      </section>
-
       
-      <section className="info-icons">
-        <div>🏦 50+ Insurance Partners</div>
-        <div>🕐 24x7 Support</div>
-        <div>👥 5M+ Users</div>
-        <div>🚀 Instant Comparison</div>
-      </section> */}
-
     {/* 🌟 Premium Feature Highlights */}
 <section className="features">
   <div className="feature-box blue">
@@ -349,15 +314,30 @@ useEffect(() => {
 
 
 {/* 🔹 Policy Insights Hero Section (Minimal Design) */}
-<section className="insight-hero clean">
-  <div className="insight-left">
+{ <section className="insight-hero clean">
+  {/* <div className="insight-left">
     <h1>Smarter Protection for Every Family</h1>
     <p>
       Compare top insurance plans, understand what fits you best, and make
       confident choices — all in one platform built for transparency and trust.
     </p>
     <button className="explore-btn">Explore Plans</button>
-  </div>
+  </div> */}
+
+<div className="insight-left">
+        <h1>Smarter Protection for Every Family</h1>
+        <p>
+          Compare top insurance plans, understand what fits you best, and make
+          confident choices — all in one platform built for transparency and trust.
+        </p>
+        <button
+          className="explore-btn"
+          onClick={() => navigate("/know-more")}
+        >
+          Know More
+        </button>
+      </div>
+
 
   <div className="insight-right clean-icons">
     <div className="insight-item">
@@ -392,103 +372,12 @@ useEffect(() => {
       </div>
     </div>
   </div>
-</section>
-
-
+</section> }
+ 
 
 
 {/* 🔹 Our Advantages Section */}
-{/* <section className="advantage-section">
-  <h2>Why Choose Us</h2>
-  <p className="advantage-subtext">
-    When you choose us, you get more than just insurance. You get trust,
-    transparency, and a partner who’s with you at every step.
-  </p>
 
-  <div className="advantage-grid">
-    <motion.div
-      className="advantage-box"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"
-        alt="Best Prices"
-      />
-      <h3>Best Prices Guaranteed</h3>
-      <p>Instant quotes from top insurers with unbeatable premium options.</p>
-    </motion.div>
-
-    <motion.div
-      className="advantage-box"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-        alt="Unbiased Advice"
-      />
-      <h3>Unbiased Expert Advice</h3>
-      <p>Recommendations that keep customers first — always.</p>
-    </motion.div>
-
-    <motion.div
-      className="advantage-box"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/942/942799.png"
-        alt="Reliable"
-      />
-      <h3>100% Reliable & Secure</h3>
-      <p>Fully regulated by IRDAI — ensuring your safety and peace of mind.</p>
-    </motion.div>
-
-    <motion.div
-      className="advantage-box"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png"
-        alt="Claim Support"
-      />
-      <h3>Hassle-free Claim Support</h3>
-      <p>We simplify your claim process for a quick and stress-free experience.</p>
-    </motion.div>
-
-    <motion.div
-      className="advantage-box"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/868/868786.png"
-        alt="Customer Support"
-      />
-      <h3>Here for You, Always</h3>
-      <p>Friendly customer support available every day of the week.</p>
-    </motion.div>
-
-<motion.div
-  className="advantage-box"
-  whileHover={{ scale: 1.05 }}
-  transition={{ duration: 0.3 }}
->
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/2910/2910762.png"
-    alt="Exclusive Offers"
-  />
-  <h3>Exclusive Offers & Deals</h3>
-  <p>Special discounts and offers curated only for our customers.</p>
-</motion.div>
-
-
-  </div>
-
-  <button className="know-more-btn">Know More</button>
-</section> */}
 
 <section className="advantage-section">
   <h2 className="advantage-title">Why Choose Us</h2>
@@ -536,7 +425,7 @@ useEffect(() => {
         desc: "From quote to claim — everything in a few clicks.",
       },
       {
-        icon: "https://cdn-icons-png.flaticon.com/512/1643/1643794.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/476/476863.png",
         title: "Trusted by Millions",
         desc: "Over 5 million+ users rely on our platform for secure insurance.",
       },
@@ -551,7 +440,14 @@ useEffect(() => {
     ))}
   </div>
 
-  <button className="know-more-btn">Know More</button>
+  {/* <button className="know-more-btn">Know More</button> */}
+
+  <button
+  className="know-more-btn"
+  onClick={() => navigate("/why-choose-us")}
+>
+  Know More
+</button>
 </section>
 
 
@@ -591,7 +487,7 @@ useEffect(() => {
 
   <div className="review-carousel-wrapper">
     <div className="review-carousel">
-      {reviews.length > 0 ? (
+      {/* {reviews.length > 0 ? (
         [...reviews, ...reviews].map((r, idx) => (
           <div className="review-card" key={r._id || idx}>
             <div className="review-header">
@@ -611,7 +507,36 @@ useEffect(() => {
         ))
       ) : (
         <p className="no-review">No reviews yet. Be the first to share!</p>
-      )}
+      )} */}
+
+{reviews.length > 0 ? (
+  [...reviews, ...reviews].map((r, idx) => (
+    <div
+      className="review-card"
+      key={`${r._id}-${idx}`}
+    >
+      <div className="review-header">
+        <div className="avatar">
+          {r.user?.name?.charAt(0).toUpperCase() || "U"}
+        </div>
+        <h4>{r.user?.name || "Anonymous"}</h4>
+      </div>
+
+      <p className="review-text">“{r.comment}”</p>
+
+      <div className="review-rating">
+        {Array.from({ length: r.rating }, (_, i) => (
+          <span key={i}>⭐</span>
+        ))}
+        <span className="rating-number">{r.rating}/5</span>
+      </div>
+    </div>
+  ))
+) : (
+  <p className="no-review">No reviews yet. Be the first to share!</p>
+)}
+
+
     </div>
   </div>
 </section>
@@ -620,15 +545,7 @@ useEffect(() => {
 
 
 {/* 🔹 Insurance Tips */}
-{/* <section className="tips-section">
-  <h2>Smart Insurance Tips</h2>
-  <div className="tips-grid">
-    <div className="tip-card">📅 Always renew before expiry to keep benefits active.</div>
-    <div className="tip-card">🧾 Compare plans yearly for better deals.</div>
-    <div className="tip-card">💰 Use online payment discounts for lower premiums.</div>
-    <div className="tip-card">👨‍👩‍👧 Get family floater for cost-effective health cover.</div>
-  </div>
-</section> */}
+
 
 <section className="tips-section">
   <h2>💡 Smart Insurance Tips</h2>
@@ -644,22 +561,11 @@ useEffect(() => {
 
 
 
-      {/* 🔹 Partners Section */}
-      {/* <section className="partners">
-        <h2>Our Trusted Partners</h2>
-        <div className="partner-grid">
-          {partners.map((p) => (
-            <Link to={`/post/${p.title.replace(/\s+/g, "-").toLowerCase()}`} key={p._id} className="partner-card">
-              <img src={p.iconUrl || p.image} alt={p.title} />
-              <p>{p.title}</p>
-            </Link>
-          ))}
-        </div>
-      </section> */}
+    
 
 
       <section className="partners">
-  <h2>🤝 Our Trusted Partners</h2>
+  <h2 className="partners-title">🤝 Our Trusted Partners</h2>
 
   <div className="partner-carousel">
     <div className="partner-track">
@@ -682,67 +588,10 @@ useEffect(() => {
 </section>
 
 
-      {/* 🔹 Footer */}
-      {/* <footer className="footer">
-        <p>© 2025 PolicyRace. All Rights Reserved.</p>
-      </footer> */}
+      
 
-
-      <footer className="footer">
-  <div className="footer-container">
-    {/* About Section */}
-    <div className="footer-section about">
-      <h3>PolicyRace</h3>
-      <p>
-        Compare, choose, and save on top insurance plans. Trusted by millions
-        of users across India.
-      </p>
-    </div>
-
-    {/* Quick Links */}
-    <div className="footer-section links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="/policies">Policies</a></li>
-        <li><a href="/categories">Categories</a></li>
-        <li><a href="/partners">Partners</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
-    </div>
-
-    {/* Resources */}
-    <div className="footer-section resources">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="/terms">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    {/* Social & Newsletter */}
-    <div className="footer-section social-newsletter">
-      <h4>Connect With Us</h4>
-      <div className="social-icons">
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook"/></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"/></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Instagram"/></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="LinkedIn"/></a>
-      </div>
-      <h4>Subscribe</h4>
-      <div className="newsletter">
-        <input type="email" placeholder="Enter your email" />
-        <button>Subscribe</button>
-      </div>
-    </div>
-  </div>
-
-  <div className="footer-bottom">
-    <p>© 2025 PolicyRace. All Rights Reserved.</p>
-  </div>
-</footer>
-
+    
+  
     </div>
   );
 };

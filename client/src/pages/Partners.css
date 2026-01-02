@@ -1,26 +1,28 @@
+/* Container */
 .partners-page {
+  padding: 40px 20px;
+  background: #f8f9fa;
   min-height: 100vh;
-  padding: 60px 8%;
-  background: radial-gradient(circle at top left, #d7d2ff, #f8f6ff 50%, #ffffff);
-  color: #222;
   font-family: "Poppins", sans-serif;
+  color: #333;
 }
 
+/* Heading */
 .partners-title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   text-align: center;
-  font-weight: 700;
-  color: #4a148c;
   margin-bottom: 10px;
+  color: #0d6efd;
 }
 
 .partners-subtitle {
-  text-align: center;
-  color: #555;
   font-size: 1.1rem;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
 }
 
+/* Search */
 .partners-search {
   display: flex;
   justify-content: center;
@@ -28,116 +30,132 @@
 }
 
 .partners-search input {
-  width: 60%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
   padding: 12px 18px;
   border-radius: 30px;
-  border: none;
+  border: 1px solid #ccc;
   outline: none;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(10px);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .partners-search input:focus {
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  border-color: #0d6efd;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
 }
 
+/* Grid */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
-  margin-top: 30px;
+  padding: 0 10px;
 }
 
+/* Card */
 .partner-card-glass {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.08);
-  backdrop-filter: blur(12px);
-  padding: 25px 20px;
+  padding: 20px;
   text-align: center;
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .partner-card-glass:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
+/* Image */
 .partner-image-wrapper {
+  width: 80px;
   height: 80px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto 15px;
 }
 
 .partner-logo {
-  height: 60px;
-  width: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
 }
 
+/* Text */
 .partner-card-glass h3 {
-  color: #3a0ca3;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 10px 0;
+  font-size: 1.2rem;
+  margin: 10px 0 6px;
+  color: #0d6efd;
 }
 
 .partner-card-glass p {
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
-.visit-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #7b2ff7, #f107a3);
-  color: #fff;
-  border-radius: 25px;
-  font-size: 0.9rem;
+/* Back Button */
+.back-home {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back-btn {
   text-decoration: none;
+  color: #fff;
+  background: #0d6efd;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
-.visit-btn:hover {
-  background: linear-gradient(135deg, #5a0ee2, #c9067b);
-  transform: scale(1.05);
+.back-btn:hover {
+  background: #0b5ed7;
+  transform: translateY(-2px);
 }
 
+/* Loading / Error / No Results */
 .loading-text,
 .error-text,
 .no-results {
   text-align: center;
-  font-size: 1.1rem;
   margin-top: 40px;
-  color: #6a1b9a;
+  font-size: 1rem;
+  color: #777;
 }
 
-.back-home {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
+/* Responsive */
+@media (max-width: 768px) {
+  .partners-page {
+    padding: 30px 15px;
+  }
+
+  .partners-title {
+    font-size: 2rem;
+  }
+
+  .partners-grid {
+    gap: 20px;
+  }
+
+  .partner-card-glass {
+    padding: 18px;
+  }
 }
 
-.back-btn {
-  background: #4a148c;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
+@media (max-width: 480px) {
+  .partners-title {
+    font-size: 1.6rem;
+  }
 
-.back-btn:hover {
-  background: #6a1b9a;
-  transform: scale(1.05);
+  .partners-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .partners-search input {
+    max-width: 100%;
+  }
 }

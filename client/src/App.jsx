@@ -71,6 +71,9 @@ import PartnerManager from "./pages/admin/PartnerManager";
 import AdminPolicyApplications from "./pages/admin/AdminPolicyApplications";
 import AdminHero from "./pages/admin/AdminHero";
 import AdminCalculatorPanel from "./pages/admin/AdminCalculatorPanel";
+import KnowMore from "./pages/KnowMore";
+
+
 
 
 import Login from "./pages/Login";
@@ -86,6 +89,9 @@ import Contact from "./pages/Contact";
 import CategoriesPage from "./pages/Categories";
 import BlogPage from "./pages/BlogPage";
 import TermsPage from "./pages/TermsPage";
+import PartnerPost from "./pages/PartnerPost";
+import Footer from "./components/Footer";
+import WhyChooseUs from "./pages/WhyChooseUs";
 
 
 const App = () => {
@@ -109,11 +115,13 @@ const App = () => {
 <Route path="/partners" element={<Partners />} />
 <Route path="/contact" element={<Contact />} />
 <Route path="/categories" element={<CategoriesPage />} />
-<Route path="/blog" element={<BlogPage />} />
+<Route path="/blog" element={<Partners />} />
 <Route path="/terms" element={<TermsPage />} />
+<Route path="/post/:slug" element={<PartnerPost />} />
 
+<Route path="/know-more" element={<KnowMore />} />
 
-
+<Route path="/why-choose-us" element={<WhyChooseUs />} />
 
 
 
@@ -185,6 +193,9 @@ const App = () => {
               }
             />
           </Routes>
+
+ <Footer /> 
+
         </Router>
       </AdminAuthProvider>
     </AuthProvider>

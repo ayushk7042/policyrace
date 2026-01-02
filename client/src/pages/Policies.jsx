@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
-import "./Policies1.css";
+import "./Policies.css";
 
 const Policies = () => {
   const [policies, setPolicies] = useState([]);

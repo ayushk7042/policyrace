@@ -4,7 +4,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../api/axios";
-import "./PolicyDetails1.css";
+import "./P.css";
 
 import { AuthContext } from "../context/AuthContext";
 
@@ -93,14 +93,25 @@ const handleSavePolicy = async () => {
       <div className="sticky-summary">
         <h3>{policy.title}</h3>
         <p>{policy.policyType} Insurance</p>
-        <a
+        {/* <a
           href="https://affalliances.com"
           target="_blank"
           rel="noopener noreferrer"
           className="summary-btn"
         >
           Apply Now
-        </a>
+        </a> */}
+
+<a
+  href={policy.ctaLinks?.stickyBar || policy.ctaLinks?.apply || "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="summary-btn"
+>
+  Apply Now
+</a>
+
+
 
  {/* Save Policy Button */}
   <button
@@ -243,14 +254,25 @@ const handleSavePolicy = async () => {
 
           {/* CTA Buttons */}
           <div className="plan-actions">
-            <a
+            {/* <a
               href="https://affalliances.com"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-apply"
             >
               🚀 Apply for This Plan
-            </a>
+            </a> */}
+
+<a
+  href={policy.ctaLinks?.apply || "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-apply"
+>
+  🚀 Apply for This Plan
+</a>
+
+
             <button className="btn-learn" onClick={() => alert("More details coming soon!")}>
               📘 Learn More
             </button>
@@ -309,14 +331,26 @@ const handleSavePolicy = async () => {
 
           <div className="quiz-footer">
             <p>🟣 You have answered {Object.keys(selectedQuiz).length} of {policy.quizzes.length} questions</p>
-            <a
+            {/* <a
               href="https://affalliances.com"
               target="_blank"
               rel="noopener noreferrer"
               className="quiz-apply-btn"
             >
               🚀 Apply After Quiz
-            </a>
+            </a> */}
+
+<a
+  href={policy.ctaLinks?.afterQuiz || policy.ctaLinks?.apply || "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="quiz-apply-btn"
+>
+  🚀 Apply After Quiz
+</a>
+
+
+
           </div>
         </section>
       )}
@@ -373,14 +407,25 @@ const handleSavePolicy = async () => {
 
       {/* Final Apply Button */}
       <div className="apply-section fade-in">
-        <a
+        {/* <a
           href="https://affalliances.com"
           target="_blank"
           rel="noopener noreferrer"
           className="apply-btn"
         >
           🚀 Apply Now on Affalliances
-        </a>
+        </a> */}
+
+<a
+  href={policy.ctaLinks?.apply || "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="apply-btn"
+>
+  🚀 Apply Now
+</a>
+
+
       </div>
     </div>
   );
