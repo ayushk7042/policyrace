@@ -76,7 +76,8 @@ api.interceptors.request.use((config) => {
     config.url.startsWith("/policies") ||
     config.url.startsWith("/partners") ||
     config.url.startsWith("/categories") ||
-    config.url.startsWith("/applications")
+    config.url.startsWith("/applications") ||
+    config.url.startsWith("/hero")
   ) {
     if (adminToken) {
       config.headers.Authorization = `Bearer ${adminToken}`;

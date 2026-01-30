@@ -8,7 +8,7 @@ const CompareModal = ({ compareList, onClose }) => {
     if (higherIsBetter) return val1 > val2 ? "best" : "worst";
     return val1 < val2 ? "best" : "worst";
   };
-
+    
   return (
     <div className="compare-modal-overlay">
       <div className="compare-modal">

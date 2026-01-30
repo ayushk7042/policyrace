@@ -1,0 +1,133 @@
+/* ===== FAQ Page ===== */
+.faq-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 6% 60px;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  background: #f9f9f9;
+}
+
+/* Header */
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0a84ff;
+}
+
+.faq-header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* FAQ Container */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* FAQ Card */
+.faq-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-card.active {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Question */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #0a84ff;
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: rgba(10,132,255,0.05);
+}
+
+/* Toggle Icon */
+.toggle-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-card.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Answer */
+.faq-answer {
+  padding: 16px 24px 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  border-top: 1px solid #eee;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Loading / No FAQ */
+.faq-loading, .no-faq {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 40px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .faq-page {
+    padding: 100px 4% 40px;
+  }
+
+  .faq-header h1 {
+    font-size: 2rem;
+  }
+
+  .faq-card {
+    border-radius: 12px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .faq-header p {
+    font-size: 1rem;
+  }
+}

@@ -6,7 +6,7 @@ import api from "../api/axios";
 //u //
 import { AuthContext } from "../context/AuthContext";
 
-import "./h.css";
+import "./Home1.css";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -99,6 +99,32 @@ useEffect(() => {
 }, []);
 
 
+
+
+const reviewCarouselRef = useRef();
+
+useEffect(() => {
+  const carousel = reviewCarouselRef.current;
+  if (!carousel) return;
+
+  let scrollAmount = 0;
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+  const interval = setInterval(() => {
+    if (scrollAmount >= maxScroll) {
+      scrollAmount = 0;
+      carousel.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      scrollAmount += 220; // 1 card width + gap
+      carousel.scrollBy({ left: 220, behavior: "smooth" });
+    }
+  }, 3000); // every 3s
+
+  return () => clearInterval(interval);
+}, []);
+
+
+
   const handleLogout = () => {
   logoutUser();  // clears user state and removes token from localStorage
   navigate("/login");
@@ -189,11 +215,21 @@ useEffect(() => {
 
   <div className="hero-right">
     <div className="hero-right-content">
-      <h1>Compare, Choose & Save on Insurance Policies</h1>
+      {/* <h1>Compare, Choose & Save on Insurance Policies</h1>
       <p>
         Find the best Life, Health, and Motor Insurance plans from top
         providers in minutes — trusted by millions of users across India.
-      </p>
+      </p> */}
+
+<h1>India’s Smarter Way to Compare & Buy Insurance</h1>
+
+<p>
+Compare trusted insurance plans from top providers, 
+make informed decisions, and secure your family’s future —
+all in one simple, transparent platform.
+</p>
+
+
       <Link to="/policies" className="hero-big-btn">
         Explore Policies
       </Link>
@@ -457,7 +493,7 @@ useEffect(() => {
 
 
 {/* 🔹 Reviews Section */}
-<section className="reviews">
+ <section className="reviews">
   <h2 className="reviews-title">💬 What Our Users Say</h2>
 
   {user ? (
@@ -485,29 +521,9 @@ useEffect(() => {
     <p className="login-prompt">Please login to share your review 😊</p>
   )}
 
-  <div className="review-carousel-wrapper">
+  {/* <div className="review-carousel-wrapper">
     <div className="review-carousel">
-      {/* {reviews.length > 0 ? (
-        [...reviews, ...reviews].map((r, idx) => (
-          <div className="review-card" key={r._id || idx}>
-            <div className="review-header">
-              <div className="avatar">
-                {r.user?.name?.charAt(0).toUpperCase() || "U"}
-              </div>
-              <h4>{r.user?.name || "Anonymous"}</h4>
-            </div>
-            <p className="review-text">“{r.comment}”</p>
-            <div className="review-rating">
-              {Array.from({ length: r.rating }, (_, i) => (
-                <span key={i}>⭐</span>
-              ))}
-              <span className="rating-number">{r.rating}/5</span>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p className="no-review">No reviews yet. Be the first to share!</p>
-      )} */}
+     
 
 {reviews.length > 0 ? (
   [...reviews, ...reviews].map((r, idx) => (
@@ -538,9 +554,35 @@ useEffect(() => {
 
 
     </div>
-  </div>
-</section>
+  </div> */}
+</section> 
 
+
+<div className="review-carousel-wrapper">
+  <div className="review-carousel" ref={reviewCarouselRef}>
+    {reviews.length > 0 ? (
+      [...reviews, ...reviews].map((r, idx) => (
+        <div className="review-card" key={`${r._id}-${idx}`}>
+          <div className="review-header">
+            <div className="avatar">
+              {r.user?.name?.charAt(0).toUpperCase() || "U"}
+            </div>
+            <h4>{r.user?.name || "Anonymous"}</h4>
+          </div>
+          <p className="review-text">“{r.comment}”</p>
+          <div className="review-rating">
+            {Array.from({ length: r.rating }, (_, i) => (
+              <span key={i}>⭐</span>
+            ))}
+            <span className="rating-number">{r.rating}/5</span>
+          </div>
+        </div>
+      ))
+    ) : (
+      <p className="no-review">No reviews yet. Be the first to share!</p>
+    )}
+  </div>
+</div>
 
 
 

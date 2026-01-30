@@ -4,7 +4,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../api/axios";
-import "./P.css";
+import "./P2.css";
 
 import { AuthContext } from "../context/AuthContext";
 

@@ -1,0 +1,359 @@
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff; /* Light premium background */
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar.scrolled {
+  background: #fdfdfd;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 8px 6%;
+}
+
+/* NAV CONTAINER */
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #020617;
+}
+
+.logo-text span {
+  color: #0a84ff; /* subtle accent */
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #020617;
+  font-weight: 500;
+  padding: 6px 0;
+  transition: all 0.25s ease;
+}
+
+.nav-links li a:hover {
+  color: #0a84ff;
+  transform: translateY(-2px);
+}
+
+/* BUTTONS */
+.btn-login,
+.btn-register,
+.btn-logout {
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-login {
+  background: #ffffff;
+  color: #0a84ff;
+  border: 1.5px solid #0a84ff;
+}
+
+.btn-login:hover {
+  background: #0a84ff;
+  color: #ffffff;
+}
+
+.btn-register {
+  background: #0a84ff;
+  color: #ffffff;
+}
+
+.btn-register:hover {
+  background: #0c6ed3;
+}
+
+.btn-logout {
+  background: #ff4d4f;
+  color: #ffffff;
+}
+
+.btn-logout:hover {
+  background: #d9363e;
+}
+
+/* USER NAME */
+.user-name {
+  font-weight: 600;
+  color: #020617;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.bar {
+  width: 26px;
+  height: 3px;
+  background-color: #020617;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE MENU */
+@media (max-width: 960px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 240px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    padding-top: 80px;
+    gap: 24px;
+    transition: all 0.3s ease;
+    box-shadow: -6px 0 28px rgba(0,0,0,0.08);
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+
+  .btn-login, .btn-register, .btn-logout {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* RESPONSIVE LOGO & LINKS */
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+
+
+
+/* ===== NAVBAR BASE WITH EFFECTS ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95); /* slight transparency */
+  backdrop-filter: blur(10px); /* modern glass-like effect */
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar.scrolled {
+  background: rgba(253, 253, 253, 0.95);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 8px 6%;
+}
+
+/* NAV LINKS */
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #020617;
+  font-weight: 500;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #0a84ff;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #0a84ff;
+  transform: translateY(-2px);
+}
+
+/* LOGO EFFECT */
+.logo-icon {
+  transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: scale(1.1);
+}
+
+/* BUTTON EFFECTS */
+.btn-login,
+.btn-register,
+.btn-logout {
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.btn-login:hover {
+  background: #0a84ff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.btn-register:hover {
+  background: #0c6ed3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.btn-logout:hover {
+  background: #d9363e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* HAMBURGER EFFECT */
+.hamburger .bar {
+  transition: all 0.4s ease;
+}
+
+/* MOBILE MENU */
+@media (max-width: 960px) {
+  .nav-links {
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* RESPONSIVE LOGO & LINKS */
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+
+
+
+
+
+/* LOGIN / REGISTER LINKS - Underline Style */
+.btn-login,
+.btn-register {
+  background: none; /* Remove box */
+  border: none;
+  padding: 6px 0;
+  font-weight: 600;
+  color: #0a84ff; /* Blue accent */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+/* Underline effect */
+.btn-login::after,
+.btn-register::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #0a84ff;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.btn-login:hover::after,
+.btn-register:hover::after {
+  width: 100%;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  transform: translateY(-2px);
+  color: #0c6ed3; /* Slightly darker blue on hover */
+  transition: all 0.3s ease;
+}

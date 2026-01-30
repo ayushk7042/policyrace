@@ -92,6 +92,8 @@ import TermsPage from "./pages/TermsPage";
 import PartnerPost from "./pages/PartnerPost";
 import Footer from "./components/Footer";
 import WhyChooseUs from "./pages/WhyChooseUs";
+import Support from "./pages/Support"; // ✅ add this at the top with other page imports
+import FAQ from "./pages/FAQ";
 
 
 const App = () => {
@@ -110,6 +112,10 @@ const App = () => {
   <Route path="/reset-password" element={<ResetPassword />} />
 <Route path="/category/:id" element={<CategoryPage />} />
 <Route path="/policy/:id" element={<PolicyDetails />} />
+<Route path="/support" element={<Support />} />
+
+<Route path="/faq" element={<FAQ />} />
+
 <Route path="/calculator" element={<Calculator />} />
 <Route path="/policies" element={<Policies />} />
 <Route path="/partners" element={<Partners />} />
